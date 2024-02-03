@@ -1,0 +1,9 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/Users/imseoghyeon/Downloads/apache-tomcat-9.0.85/lib/servlet-api.jar"
+    ],
+    "java.project.sourcePaths": [
+        "BMR/src/main/java"
+    ]
+}
