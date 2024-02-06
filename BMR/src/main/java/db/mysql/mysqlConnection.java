@@ -17,6 +17,7 @@ public class mysqlConnection {
         try {
             prop.load(new FileInputStream("/Users/imseoghyeon/Desktop/Project1/BMR/src/properties/mysql.properties"));
             DATABASE_NAME = prop.getProperty("databaseName");
+            PROPERTIES = prop.getProperty("properties");
             URL = prop.getProperty("url");
             USER = prop.getProperty("user");
             PASS = prop.getProperty("pass");
@@ -28,8 +29,13 @@ public class mysqlConnection {
     public static Connection getConnection() {
         try {
             initConnection();
-            Class.forName("com.mysql.cj.jdbc.driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             cn = DriverManager.getConnection(URL + DATABASE_NAME + PROPERTIES,USER,PASS);
+            System.out.println(URL);
+            System.out.println(DATABASE_NAME);
+            System.out.println(PROPERTIES);
+            System.out.println(USER);
+            System.out.println(PASS);
 
         }catch (SQLException  | ClassNotFoundException e) {
             e.printStackTrace();
