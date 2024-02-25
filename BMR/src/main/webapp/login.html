@@ -4,37 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMR Login Pages</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-    <div class="sidenav">
-        <div class="login-main-text">
-           <h2>In To App<br>Login Page</h2>
-           <p>Login or register from here to access.</p>
-        </div>
-     </div>
-     <div class="main">
-        <div class="col-md-6 col-sm-12">
-           <div class="login-form">
-              <form action="fn/login" method="post">
-                 <div class="form-group">
-                     <label>メール</label>
-                     <input type="text" class="form-control" placeholder="メールアドレス" name="email">
-                     <a id="login-help"  href="#" value="login-help">メールアドレスを忘れた場合</a><br>
+   <h2>
+      Welcome BMR Login Pages
+      </h2> 
+      <div class="container" id="container">
+         <div class="form-container sign-in-container">
+              <form action="fn/login" method="post">  
+                  <div class="form-group">
+                     <span id="color" class="p-position">メールアドレス</span>
+                     <span id="miss" class="none mis">- メールアドレスが無効です。</span>
+                     <input type="email" class="form-control" placeholder="メールアドレス" name="email" required>
                   </div>
-                 <div class="form-group">
-                    <label>パスワード</label>
-                    <input type="password" class="form-control" placeholder="パスワード" name="password">
-                    <a id="login-help"  href="#" value="login-help">パスワードを忘れた場合</a><br>
+                  <div class="form-group">
+                     <span id="colors" class="p-position ">パスワード</span>
+                     <span id="misss" class="none mis">- パスワードが無効です</span>
+                     <input type="password" class="form-control" placeholder="パスワード" name="password" required>
                   </div>
                  <input id="login-button" type="submit" value="ログイン">
-              </form>
-              <input id="register-button" class="button" type="submit" onclick="location.href='createUser.jsp'" value="アカウントを作成">
+                 <input id="register-button" class="button" type="submit" onclick="location.href='createUser.jsp'" value="アカウントを作成">
+               </form>
             </div>
-        </div>
-     </div>
+         </div>
+   </body>
+     <script> 
+      const searchParams = new URLSearchParams(location.search);
+    if (searchParams.has('miss')) {
+		document.getElementById('miss').classList.remove('none');
+		document.getElementById('misss').classList.remove('none');
+		document.getElementById('color').classList.add('mis');
+		document.getElementById('colors').classList.add('mis');
+    }
+   </script>
 </body>
 </html> 

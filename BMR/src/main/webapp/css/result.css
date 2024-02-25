@@ -1,0 +1,110 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/*HEADER*/
+/*Logo*/
+header {
+    z-index: 1;
+    background-color: #c7c7c7;
+    padding: 0 20px;
+    display: inline-flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+/*Logo Vertically Center*/
+header img {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+/*NAV*/
+header a.link {
+    text-decoration: none;
+    color: black;
+}
+
+header ul {
+    text-align: right;
+    margin-right: 20px;
+    list-style: none;
+}
+
+header ul li {
+    vertical-align: top;
+    margin: 5px;
+    width: 200px;
+}
+
+/*BODY*/
+body div.content {
+    /*Horizontally Center*/
+    text-align: center;
+    /*Vertically Center*/
+    margin-top: 130px;
+}
+
+/*Table*/
+body table {
+    /*Horizontally Center*/
+    margin-left: auto;
+    margin-right: auto;
+
+    /*Table Style*/
+    width: 80%;
+    height: 100px;
+    border-collapse: collapse;
+}
+
+/*Table Style*/
+body table th {
+    background-color: #515151;
+    color: white;
+    height: 50px;
+}
+
+body table tr {
+    background-color: #c7c7c7;
+    height: 40px;
+}
+
+body table tr:nth-of-type(even) {
+    background-color: white;
+}
+
+/*BUTTON*/
+body a.button {
+    margin: 20px;
+    background-color: #ff4136;
+    border: 0px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+body a.button:hover {
+    background-color: #e4372e;
+}

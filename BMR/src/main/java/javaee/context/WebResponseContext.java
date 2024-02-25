@@ -43,6 +43,7 @@ public class WebResponseContext implements ResponseContext{
 	@Override
 	public void setTarget(String transferInfo) {
 		target = transferInfo;
+		System.out.println("target value" + target);
 	}
 
 	@Override

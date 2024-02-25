@@ -10,7 +10,6 @@ public class CommandFactory {
         Properties prop = new Properties();
         try {
             prop.load(new FileInputStream("/Users/imseoghyeon/Desktop/Project1/BMR/src/properties/commands.properties"));
-            // rc.getCommandPath = BMRlogin
 			String name = prop.getProperty(rc.getCommandPath());
             Class c = Class.forName(name);
             command = (AbstractCommand) c.newInstance();

@@ -1,21 +1,45 @@
-<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="bean.userBean"%> 
+<%@ page import="db.dao.UserDataDAO"%> 
 <!DOCTYPE html>
 <html lang="jp">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMR Create User Pages</title>
-    <script type="text/javascript" src="javascript/loginValidate.js"></script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link rel="stylesheet" href="css/login.css">
-</head>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>BMR Create User Pages</title>
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/register.css">
+      <script type="text/javascript">    
+         function registerCheckFunction() {
+            var email = $('#email').val();
+            $.ajax({
+               type: 'POST',
+               url: './fn/check',
+               data: {email: email},
+               success: function(result) {
+                  console.log("result value =" + result);
+                  if(result == 1) {    
+                     $("#checkMessage").html('使用できません');
+                     $('#checkType').attr('class', 'modal-content panel-warning');
+                  }else {
+                     $("#checkMessage").html('使用できます');
+                     $('#checkType').attr('clsass', 'modal-content panel-success');  
+                  }
+                  $('#checkModal').modal("show");
+               }
+            });
+         }
+      </script>
+  </head>
 <body>
+  
     <div class="sidenav">
         <div class="login-main-text">
-           <h2>In To App<br>Register Page</h2>
-           <p>Register from here to access.</p>
+         <h2>BMR 登録ページ</h2>
+         <p>アクセスするにはここから登録してください。</p>
         </div>
      </div>
      <div class="main">
@@ -24,16 +48,38 @@
               <form action="fn/register" method="post">
                  <div class="form-group">
                     <label>登録するメールアドレス</label>
-                    <input type="text" class="form-control" placeholder="メールアドレス" name="email">
+                    <input type="email" id="email" class="form-control" placeholder="メールアドレス" name="email" required>
+                    <button class="btn btn-primary" onclick="registerCheckFunction();" type="button">重複チェック</button>
                  </div>
                  <div class="form-group">
                     <label>登録するパスワード</label>
-                    <input type="password" class="form-control" placeholder="パスワード" name="password">
+                    <input type="password" id="password" class="form-control" placeholder="パスワード" name="password" required>
                  </div>
-                 <button type="submit" class="btn btn-secondary">Register</button>
+                 <button type="submit" class="btn btn-secondary">登録</button>
               </form>
            </div>
         </div>
      </div>
+     <script>
+      $('messageModal').modal("show");
+     </script>
+      <div class="modal fade" id="checkModal" tabindex="-1" role="dialog" aria-hidden="true">
+         <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center">
+               <div id="checkType" class="modal-content panel-info">
+                  <div class="modal-header panel-heading">
+                     <h4 class="modal-title">
+                        確認メッセージ
+                     </h4>
+                  </div>
+                  <div class="modal-body" id="checkMessage">
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-primary" data-dismiss="modal">確認</button>
+                  </div>
+               </div>   
+            </div>
+         </div>   
+      </div>
 </body>
 </html>

@@ -16,6 +16,7 @@ import javaee.context.WebRequestContext;
 import javaee.context.WebResponseContext;
 
 public class WebApplicationController implements ApplicationController {
+	String end    = "\u001b[00m";
     public RequestContext getRequest(Object request) {
 		RequestContext reqc = new WebRequestContext();
 		reqc.setRequest(request);
@@ -30,7 +31,6 @@ public class WebApplicationController implements ApplicationController {
 	
 	public void handleRequest(RequestContext req, ResponseContext res) {
 		AbstractCommand command = CommandFactory.getCommand(req);
-		System.out.println(command);
 		command.execute(req, res);
 	}
 	
@@ -38,7 +38,6 @@ public class WebApplicationController implements ApplicationController {
 		HttpServletRequest req = (HttpServletRequest)reqc.getRequest();
 		HttpServletResponse res = (HttpServletResponse)resc.getResponse();
 		req.setAttribute("result", resc.getResult());
-		
 		try {
 			if(resc.getTarget() != null) {
 				RequestDispatcher rd = req.getRequestDispatcher(resc.getTarget());
