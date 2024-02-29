@@ -8,9 +8,9 @@
 </head>
 <body>
    <h2>
-      Welcome BMR Login Pages
+      BMR ログイン ページ
       </h2> 
-      <div class="container" id="container">
+      <div class="container">
          <div class="form-container sign-in-container">
               <form action="fn/login" method="post">  
                   <div class="form-group">
@@ -21,22 +21,29 @@
                   <div class="form-group">
                      <span id="colors" class="p-position ">パスワード</span>
                      <span id="misss" class="none mis">- パスワードが無効です</span>
-                     <input type="password" class="form-control" placeholder="パスワード" name="password" required>
+                     <input type="password" class="form-control" placeholder="パスワード" name="password" required style="left: 20px;">
                   </div>
                  <input id="login-button" type="submit" value="ログイン">
-                 <input id="register-button" class="button" type="submit" onclick="location.href='createUser.jsp'" value="アカウントを作成">
+                 <span class="regist">アカウントが必要ですか？<a class="registcolor" href="createUser.jsp">登録</a></span>
                </form>
+               
             </div>
          </div>
    </body>
      <script> 
       const searchParams = new URLSearchParams(location.search);
-    if (searchParams.has('miss')) {
-		document.getElementById('miss').classList.remove('none');
-		document.getElementById('misss').classList.remove('none');
-		document.getElementById('color').classList.add('mis');
-		document.getElementById('colors').classList.add('mis');
-    }
+      const missElement = document.getElementById('miss');
+      const misssElement = document.getElementById('misss');
+      if (searchParams.has('miss')) {
+         missElement.style.display = 'block';
+      } else {
+         missElement.style.display = 'none';
+      }
+      if (searchParams.has('miss')) {
+         misssElement.style.display = 'block';
+      } else {
+         misssElement.style.display = 'none';
+      }
    </script>
 </body>
 </html> 

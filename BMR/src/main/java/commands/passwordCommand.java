@@ -23,10 +23,12 @@ public class passwordCommand extends AbstractCommand{
             System.out.println("passwordCommand id value =" + userBean.getUser_id());
             res.setRedirect("/main.jsp?id=" + userBean.getUser_id()); 
         }else if(password.equals(userBean2.getLogin_password()) == false) {
-            res.setRedirect("/account.jsp?id=" + userBean.getUser_id());
+            // res.setRedirect("/account.jsp?id=" + userBean.getUser_id());
+            res.setRedirect("/account.jsp?miss");
             System.out.println("User_id2" + userBean.getUser_id());
         }else if(new_password.equals(new_change_password) != false) {
-            res.setRedirect("/account.jsp?id=" + userBean.getUser_id());
+            // res.setRedirect("/account.jsp?id=" + userBean.getUser_id());
+            res.setRedirect("/account.jsp?miss");
             System.out.println("User_id3" + userBean.getUser_id());
         }
 

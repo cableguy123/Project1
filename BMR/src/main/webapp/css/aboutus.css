@@ -62,31 +62,17 @@ body p {
     text-align: left;
 }
 
-/*BUTTON*/
-body a.button {
-    background-color: #ff4136;
-    border: 0px;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    padding: 10px 16px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
-    white-space: nowrap;
-}
-
-body a.button:hover {
-    background-color: #e4372e;
-}
-
-body div.button_center {
-    text-align: center;
+.content > .button-center {
+    margin:8px 0;
+    border: 1px solid #FF4B2B;
+    border-radius: 20px;
+    text-decoration-line: none;
+    background-color: #FF4B2B;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
 }

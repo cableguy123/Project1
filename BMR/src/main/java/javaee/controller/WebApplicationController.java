@@ -16,7 +16,6 @@ import javaee.context.WebRequestContext;
 import javaee.context.WebResponseContext;
 
 public class WebApplicationController implements ApplicationController {
-	String end    = "\u001b[00m";
     public RequestContext getRequest(Object request) {
 		RequestContext reqc = new WebRequestContext();
 		reqc.setRequest(request);

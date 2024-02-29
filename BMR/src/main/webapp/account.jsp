@@ -17,7 +17,7 @@ pageEncoding="UTF-8" %>
       <header>
         <div>
           <a href="main.jsp?id=<%= userBean.getUser_id() %>">
-            <img src="${pageContext.request.contextPath}/css/img/logo.png" alt="Website logo" width="10%">
+            <img src="${pageContext.request.contextPath}/css/img/logo2.png" alt="Website logo" width="20%">
           </a>
         </div>
         <!-- logo -->
@@ -35,7 +35,7 @@ pageEncoding="UTF-8" %>
         <form method="post" action="fn/password">
           <div class="form-group">
             <span id="color" class="p-position">現在パスワード</span>
-            <span id="miss" class="none mis">パスワードが無効です</span>
+            <span id="miss" class="none mis" style="display: none;"> - パスワードが無効です</span>
             <input type="password" class="form-control" placeholder="パスワード" name="password" required>
           </div>  
           <div class="form-group">
@@ -44,23 +44,28 @@ pageEncoding="UTF-8" %>
           </div>
           <div class="form-group">
             <span id="colors" class="p-position">新しいパスワード確認</span>
-            <span id="misss" class="none mis">パスワードが一致しません</span>
+            <span id="misss" class="none mis" style="display: none;"> - パスワードが一致しません</span>
             <input type="password" class="form-control" placeholder="新しいパスワード確認" name="new_change_password" required>
           </div>
           <input id="change-button" type="submit" value="変更">
           <input type="hidden" name="user_id" value="${userBean.getUser_id()}">
         </form>
       </div>
-      <!-- password Change -->
 
       <script>
-        const searchForms = new URLSearchParams(location.search);
-        if (searchForms.has('miss')) {
-          document.getElementById('miss').classList.remove('none');
-		      document.getElementById('misss').classList.remove('none');
-		      document.getElementById('color').classList.add('mis');
-		      document.getElementById('colors').classList.add('mis');
-        }
+        const searchParams = new URLSearchParams(location.search);
+        const missElement = document.getElementById('miss');
+        const misssElement = document.getElementById('misss');
+      if (searchParams.has('miss')) {
+         missElement.style.display = 'block';
+      } else {
+         missElement.style.display = 'none';
+      }
+      if (searchParams.has('miss')) {
+         misssElement.style.display = 'block';
+      } else {
+         misssElement.style.display = 'none';
+      }
       </script>
   </body>
 </html>

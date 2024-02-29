@@ -21,7 +21,7 @@
         <!-- Logo.png -->
         <div>
             <a href="main.jsp?id=<%= userBean.getUser_id() %>">
-                <img src="${pageContext.request.contextPath}/css/img/logo.png" alt="Website logo" width="10%">
+                <img src="${pageContext.request.contextPath}/css/img/logo2.png" alt="Website logo" width="10%">
             </a>
         </div>
         <!-- link -->

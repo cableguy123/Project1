@@ -16,9 +16,7 @@ public class WebRequestContext implements RequestContext {
 	@Override
 	public String getCommandPath() {		
 		String path = request.getRequestURI();
-		System.out.println("path value =" + path);
 		String target= path.replace("fn", "").replace("BMR", "").replace("/","");
-		System.out.println("target value =" + target);
 		return target;
 	}
 	@Override
@@ -44,19 +42,11 @@ public class WebRequestContext implements RequestContext {
 		this.session = (HttpSession) session;
 	}
 	@Override
-	public void invalidateSession(){
-		session.invalidate();
-	}
-	@Override
 	public void setAttributeInSession(String key, Object obj) {
 		session.setAttribute(key, obj);
 	}
 	@Override
 	public Object getAttributeInSession(String key) {
 		return session.getAttribute(key);
-	}
-	@Override
-	public void invalidate() {
-		session.invalidate();
 	}
 }

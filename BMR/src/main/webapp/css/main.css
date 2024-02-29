@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
 
 html,
 body {
@@ -20,6 +20,9 @@ header {
   left: 0;
   right: 0;
   width: 100%;
+}
+.title {
+  text-align: center;
 }
 
 /*Logo Vertically Center*/
@@ -55,13 +58,16 @@ article {
 
 .container {
   display: flex;
-  margin-top: 150px;
-  margin-left: 50px;
+  margin-top: 120px;
+  margin-left: 60px;
   margin-right: 50px;
+  height: 100vh;
 }
 
 div.left-half {
   flex: 1;
+  margin-top: -5px;
+  height: 100%;
 }
 .left-half > em {
   word-break: break-word;
@@ -84,13 +90,12 @@ body input.input {
 /*BUTTON*/
 body input.button {
   margin: 5px;
-  background-color: #ff4136;
-  border: 0px;
-  border-radius: 5px;
+  background-color: #ff4B2B;
+  border: 1px solid #ff4B2B;
+  border-radius: 20px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Inter", sans-serif;
   font-size: 14px;
   padding: 10px 16px;
   position: relative;

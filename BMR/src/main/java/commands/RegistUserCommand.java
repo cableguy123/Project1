@@ -25,7 +25,6 @@ import javax.servlet.http.HttpSession;
                 res.setRedirect("/createUser.jsp");
             } else if (flag != -1) {
                 userBean = userDataDAO.getRecord(email); 
-                System.out.println("RegistUserCommand id value =" + userBean.getUser_id());
                 req.setAttributeInSession("userBean", userBean);
                 res.setTarget("/data_input.jsp?id=" + userBean.getUser_id());
 

@@ -31,7 +31,7 @@
                     <section class="container">
                         <div class="left-half">
                             <article>
-                                <h2>BMR</h2>
+                                <h2 style="text-align: center;">BMR</h2>
                                 <p>
                                     BMR(Basal Metaboly
                                     Rate)は、基礎代謝率を表す略語であり、呼吸、血液循環、細胞成長、体温調節、発毛およびホルモン生成などの基本的な機能を遂行するために身体が必要とするエネルギー(カロリー)。
@@ -45,11 +45,12 @@
                                 <br>
                                 <em>W: 体重(kg),H :身長(cm),A :年齢 </em>
                                 <!-- TDEE -->
-                                <h2>TDEE(総消費カロリー量)</h2>
-                                <p>TDEE(Total Daily Energy Expenditure)は、人が1日に使用する総エネルギー(カロリー)である </p>
+                                <h2 style="text-align:center;">TDEE(総消費カロリー量)</h2>
+                                <p>TDEEはTotal Daily Energy Expenditureの略で、基礎代謝量に一日の活動カロリーを足したもので、一日の総消費カロリーのことをいいます。</p>
                             </article>
                             <article>
-                                <h2>年齢によるBMR計算はこちらをご覧ください</h2>
+                                <h2 style="text-align:center;">年齢によるBMR計算はこちらをご覧ください</h2>
+                                <span>(W: 体重, H: 身長) </span>
                                 <p>
                                     <em>男性</em><br>
                                     <em>18〜29歳 :</em>
@@ -75,7 +76,7 @@
                             <article>
                                 <form method="post" action="fn/calculator">
                                     <div>
-                                        <h3>Activity Level</h3>
+                                        <h3>アクティビティレベル</h3>
                                         <input id="1" type="radio" name="activity_level" value="1" required>
                                         <label for="1">まったくない</label>
                                         <br>
